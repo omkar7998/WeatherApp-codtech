@@ -1,0 +1,195 @@
+/* ======= Global Reset ======= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ======= Background ======= */
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(-45deg, #1e3c72, #2a5298, #4bc0c8, #c779d0);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+  color: #fff;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ======= Container ======= */
+.container {
+  width: 90%;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 25px 30px;
+  text-align: center;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-5px);
+}
+
+/* ======= Heading ======= */
+h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* ======= Input Section ======= */
+.input-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+input {
+  flex: 1;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+  transition: 0.3s;
+}
+
+input::placeholder {
+  color: #eaeaea;
+}
+
+input:focus {
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* ======= Buttons ======= */
+button {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 600;
+  transition: 0.3s;
+  box-shadow: 0 0 15px rgba(38, 143, 255, 0.4);
+}
+
+button:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 20px rgba(38, 143, 255, 0.7);
+}
+
+/* ======= Weather Card ======= */
+#card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 18px;
+  padding: 25px 20px;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+}
+
+#card.hidden {
+  display: none;
+}
+
+/* ======= Error & Loading ======= */
+#error {
+  color: #ff9b9b;
+  font-weight: 600;
+  margin-top: 10px;
+  min-height: 20px;
+}
+
+#loading {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  color: #c9e4ff;
+}
+
+/* ======= Weather Info ======= */
+#cityName {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+#country {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.weather-icon {
+  width: 100px;
+  margin: 10px 0;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ======= Details ======= */
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  gap: 5px;
+}
+
+.details p {
+  font-size: 1rem;
+  font-weight: 500;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.local-time {
+  font-size: 0.95rem;
+  opacity: 0.8;
+  margin-top: 8px;
+}
+
+/* ======= Responsive ======= */
+@media (max-width: 480px) {
+  .container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  input {
+    font-size: 0.9rem;
+  }
+
+  button {
+    padding: 8px 10px;
+  }
+
+  #cityName {
+    font-size: 1.5rem;
+  }
+}
